@@ -7,7 +7,7 @@ dy = [-1,1,0,0]
 dx = [0,0,1,-1]
 
 for _ in range(n):
-    graph.append(list(map(int,input().split())))
+    graph.append(list(map(int,input())))
 # 공백 없이 입력 받으려면 .split()을 제외해주면 된다.
 
 def bfs(y,x):
