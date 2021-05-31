@@ -20,3 +20,6 @@ for i in range(0,len(card)):
             sum.add(card[i]+card[j]+card[m])
 sum=quick_sort(list(sum))
 print(sum[k-1])
+
+#set은 중복제거용
+# 내장함수 사용하지 말고 퀵소트_2 리스트 컴프리헨션 익숙해지기
