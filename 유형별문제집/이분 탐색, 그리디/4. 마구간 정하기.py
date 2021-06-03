@@ -11,12 +11,13 @@ def q_s(arr):
     return q_s(left) + [pivot] + q_s(right)
 
 def Count(target_horse): #target_horse: 말 사이의 거리
-    count = 0
-    for x in range(len(arr)):
-        if x+target_horse < len(arr):
-            count += 1
-        else :
-            return count
+    count = 1
+    end_point = arr[0]
+    for i in range(1,len(arr)):
+        if arr[i]-end_point >= target_horse:
+            count +=1
+            end_point = arr[i]
+    return count
 
 
 for _ in range(n):
@@ -28,11 +29,12 @@ end = max(arr)
 res = 0
 while start <= end:
     mid = (start+end)//2
-    if Count(mid) <= c : #Count(mid) : 말 배치 가능 개수 , mid : 말 사이의 거리
+    # 처음 mid 값:5, return:2(배치 거리가 너무 길다) -> else : end=mid-1
+    if Count(mid) >= c : #배치 거리가 짧아서 말의 개수가 더 많이 배치되면, 배치거리를 늘린다. start = mid + 1
         res = mid
-        # print(res)
-        end = mid - 1
+        start = mid +1
 
-    else :
-        start = mid + 1
-print (arr[res]-arr[0])
+    else : #배치거리가 길어서 말의 개수가 너무 적게 배치되면, 배치거리를 줄인다. end = mid-1
+        end = mid -1
+
+print (res)
