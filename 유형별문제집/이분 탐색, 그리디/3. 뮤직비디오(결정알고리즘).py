@@ -19,7 +19,7 @@ end = sum(arr)
 res = 0
 while start <= end:
     mid = (start+end)//2
-    if Count(mid)<=m :
+    if Count(mid)<=m : #CD 개수 3개로 맞추려면 2개도 정답영역이긴 하므로, <= m
         # print(mid)
         res = mid
         end = mid -1

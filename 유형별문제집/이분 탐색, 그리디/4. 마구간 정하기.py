@@ -29,8 +29,8 @@ end = max(arr)
 res = 0
 while start <= end:
     mid = (start+end)//2
-    # 처음 mid 값:5, return:2(배치 거리가 너무 길다) -> else : end=mid-1
-    if Count(mid) >= c : #배치 거리가 짧아서 말의 개수가 더 많이 배치되면, 배치거리를 늘린다. start = mid + 1
+    if Count(mid) >= c : # 3마리가 target, 4마리도 정답영역은 되므로, >= c
+        #배치 거리가 짧아서 말의 개수가 더 많이 배치되면, 배치거리를 늘린다. start = mid + 1
         res = mid
         start = mid +1
 
