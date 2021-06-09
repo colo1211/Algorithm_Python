@@ -11,8 +11,9 @@ def get_sum(arr):
 for i in range(len(arr)):
     if arr[i] == m:
         count += 1
-    for j in range(i+1, len(arr)):
-        if get_sum(arr[i:j+1]) == m:
-            count += 1
+    else :
+        for j in range(i+1, len(arr)):
+            if get_sum(arr[i:j+1]) == m:
+                count += 1
 
 print(count)
