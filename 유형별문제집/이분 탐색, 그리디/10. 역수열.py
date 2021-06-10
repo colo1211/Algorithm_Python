@@ -1,8 +1,8 @@
-n = [0]*(int(input()))
+n = int(input())
+n_list = []
 arr= list(map(int, input().split())) #arr은 역수열 값
-for i in range(0,len(arr)):
-    if arr[i] == 0:
-        n.insert(0,i+1)
-    else :
-        n[arr[i]] = i+1
-    print(n)
+arr = arr[::-1]
+for i in arr:
+    n_list.insert(i,n)
+    n -= 1
+print(n_list)
